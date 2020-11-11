@@ -251,7 +251,7 @@ export default {
     }
   },
   created() {
-    this.getUserList()
+    // this.getUserList()
     this.handleSizeChange(this.pageSizes[0])
   },
   mounted() {},
