@@ -63,14 +63,15 @@ const routes = [
         path: '/reports',
         name: 'reports',
         component: () => import('@/views/DataStatistics/DataReport.vue')
+      },
+      {
+        path: '/goods/add',
+        name: 'addGoods',
+        component: () => import('@/views/GoodsManage/AddGoods.vue')
+
       }
     ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({
