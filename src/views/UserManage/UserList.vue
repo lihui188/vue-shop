@@ -55,7 +55,7 @@
             </el-switch>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="180">
+        <el-table-column label="操作" width="250">
           <template v-slot="scope">
             <el-button
               type="primary"
@@ -80,7 +80,7 @@
                 size="mini"
                 icon="el-icon-setting"
                 @click="setRole(scope.row)"
-              ></el-button>
+              >分配角色</el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -266,9 +266,6 @@ export default {
         this.total = res.data.total
       })
     },
-    editClick(userInfo) {
-      console.log(userInfo)
-    },
     // 监听pagesize改变的事件
     handleSizeChange(val) {
       this.queryInfo.pagesize = val
@@ -284,7 +281,6 @@ export default {
         .put(`users/${userInfo.id}/state/${userInfo.mg_state}`)
         .then(res => {
           res = res.data
-          console.log(res)
           if (res.meta.status !== 200) {
             userInfo.mg_state = !userInfo.mg_state
             return this.$message.error('状态设置失败')
@@ -336,7 +332,6 @@ export default {
           // 可以发起网络请求
           this.$http.put(`users/${this.editUserForm.id}`, params).then(res => {
             res = res.data
-            console.log(res)
             if (res.meta.status !== 200) {
               this.$message.error(res.meta.msg)
             } else {

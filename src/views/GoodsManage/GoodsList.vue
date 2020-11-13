@@ -111,7 +111,6 @@ export default {
   },
   methods: {
     getGoodsList() {
-      console.log(this.queryInfo)
       this.$http.get('goods', { params: this.queryInfo }).then(res => {
         res = res.data
         if (res.meta.status !== 200) {

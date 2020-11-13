@@ -95,7 +95,6 @@
             v-model="selectCityId"
             :options="cityData"
             clearable
-            @change="selectCity"
           ></el-cascader>
           <!-- <el-input v-model="addressForm.address1"></el-input> -->
         </el-form-item>
@@ -209,9 +208,6 @@ export default {
       this.$refs.addressFormRef.resetFields()
       this.selectCityId = []
     },
-    selectCity() {
-      console.log(this.selectCityId)
-    },
     openDelete(id) {
       this.$confirm('此操作将永久删除该用户, 是否继续?', '删除', {
         confirmButtonText: '确定',
@@ -243,7 +239,6 @@ export default {
       // if (res.meta.status !== 200) {
       //   return this.$message.error(res.meta.msg)
       // }
-      // console.log(res.data)
       this.progressDialogVisible = true
     }
   }

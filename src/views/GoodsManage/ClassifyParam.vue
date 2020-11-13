@@ -306,7 +306,6 @@ export default {
         item.inputVisible = false
         item.inputValue = ''
       })
-      console.log(res.data)
       if (this.activeName === 'many') {
         this.manyTableData = res.data
       } else {
@@ -320,7 +319,6 @@ export default {
         `categories/${this.cateId}/attributes/${attrId}`,
         { attr_sel: this.activeName }
       )
-      console.log(res)
       if (res.meta.status !== 200) {
         return this.$message.error(res.meta.msg)
       }

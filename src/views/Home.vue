@@ -10,8 +10,7 @@
     </el-header>
     <el-container>
       <el-aside width="auto">
-        <div class="toggle-button" @click="toggleCollapse">|||</div>
-        <common-aside :menus="menus" :isCollapse="isCollapse"></common-aside
+        <common-aside :menus="menus"></common-aside
       ></el-aside>
       <el-main>
         <router-view />
@@ -26,8 +25,7 @@ export default {
   components: { CommonAside },
   data() {
     return {
-      menus: [],
-      isCollapse: false
+      menus: []
     }
   },
   created() {
@@ -45,9 +43,6 @@ export default {
     logout() {
       window.sessionStorage.clear()
       this.$router.push('login')
-    },
-    toggleCollapse() {
-      this.isCollapse = !this.isCollapse
     }
   }
 }
@@ -66,13 +61,7 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.toggle-button {
-  background-color: #4a5064;
-  font-size: 10px;
-  line-height: 24px;
-  color: #ffffff;
-  text-align: center;
-  letter-spacing: 0.2em;
-  cursor: pointer;
+.el-aside{
+  background-color: #545C64;
 }
 </style>

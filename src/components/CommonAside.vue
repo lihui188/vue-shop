@@ -1,5 +1,7 @@
 <template>
-  <el-menu
+<div>
+  <div class="toggle-button" @click="toggleCollapse">|||</div>
+    <el-menu
     :collapse="isCollapse"
     class="el-menu-vertical-demo"
     background-color="#545c64"
@@ -39,13 +41,13 @@
       </el-menu-item>
     </el-submenu>
   </el-menu>
+</div>
 </template>
 
 <script>
 export default {
   props: {
-    menus: Array,
-    isCollapse: Boolean
+    menus: Array
   },
   computed: {
     noChildren() {
@@ -64,7 +66,8 @@ export default {
         102: 'iconfont icon-dingdanguanli',
         145: 'iconfont icon-tongji'
       },
-      activePath: ''
+      activePath: '',
+      isCollapse: false
     }
   },
   created() {
@@ -74,6 +77,9 @@ export default {
     saveNavState(path) {
       window.sessionStorage.setItem('activePath', path)
       this.activePath = path
+    },
+    toggleCollapse() {
+      this.isCollapse = !this.isCollapse
     }
   }
 }
@@ -95,5 +101,14 @@ export default {
 }
 .iconfont {
   margin-right: 10px;
+}
+.toggle-button {
+  background-color: #4a5064;
+  font-size: 10px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.2em;
+  cursor: pointer;
 }
 </style>

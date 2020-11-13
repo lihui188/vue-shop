@@ -1,6 +1,7 @@
 module.exports = {
   presets: [
     '@vue/cli-plugin-babel/preset'
+
   ],
   plugins: [
     [
@@ -9,6 +10,7 @@ module.exports = {
         libraryName: 'element-ui',
         styleLibraryName: 'theme-chalk'
       }
-    ]
+    ],
+    '@babel/plugin-syntax-dynamic-import'
   ]
 }
